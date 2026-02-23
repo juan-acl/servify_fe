@@ -1,0 +1,70 @@
+/* ── Input Component ── */
+.input-field {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-base {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.25s ease;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    box-sizing: border-box;
+}
+
+.input-base::placeholder {
+    color: #C0C5CE;
+    font-weight: 300;
+}
+
+.input-base:focus {
+    border-color: #4A7C23;
+    box-shadow: 0 0 0 3px rgba(74, 124, 35, 0.1);
+}
+
+.input-base:hover:not(:focus) {
+    border-color: #D1D5DB;
+}
+
+/* Error state */
+.input-base.input-error {
+    border-color: #EF4444;
+}
+
+.input-base.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input-error-text {
+    display: block;
+    font-size: 12px;
+    color: #EF4444;
+    margin-top: 4px;
+}
+
+/* Right element (ej: botón mostrar/ocultar password) */
+.input-right-element {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}

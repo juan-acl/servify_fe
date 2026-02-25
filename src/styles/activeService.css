@@ -1,0 +1,564 @@
+/* ══════════════════════════════════════
+   ACTIVE SERVICE — Tracking Page
+   ══════════════════════════════════════ */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-step {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 35, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(74, 124, 35, 0);
+    }
+}
+
+.active-service {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+    min-height: 100vh;
+    background: #FAFAF7;
+}
+
+/* ── Header ── */
+.active-service-header {
+    margin-bottom: 32px;
+}
+
+.active-service-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    color: #4A7C23;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
+}
+
+.active-service-back:hover {
+    color: #3B6B1A;
+}
+
+.active-service-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* ══════════════════════════════════════
+   STEPPER
+   ══════════════════════════════════════ */
+.active-service-stepper {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    animation: fade-in 0.4s ease-out;
+}
+
+.active-service-step-wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.active-service-step-wrapper:last-child {
+    flex: 0;
+}
+
+.active-service-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 60px;
+}
+
+.active-service-step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    background: #F3F4F6;
+    color: #9CA3AF;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+}
+
+.active-service-step.active .active-service-step-circle {
+    background: #F0FDF4;
+    color: #4A7C23;
+    border-color: #4A7C23;
+}
+
+.active-service-step.current .active-service-step-circle {
+    background: linear-gradient(135deg, #3B6B1A, #4A7C23);
+    color: #FFFFFF;
+    border-color: #4A7C23;
+    animation: pulse-step 2s ease-in-out infinite;
+}
+
+.active-service-step-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #9CA3AF;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.active-service-step.active .active-service-step-label {
+    color: #374151;
+    font-weight: 600;
+}
+
+.active-service-step-line {
+    flex: 1;
+    height: 2px;
+    background: #E5E7EB;
+    margin: 20px 8px 0;
+    border-radius: 1px;
+    transition: background 0.3s ease;
+}
+
+.active-service-step-line.active {
+    background: #4A7C23;
+}
+
+/* ── Service Info ── */
+.active-service-info {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    animation: fade-in 0.4s ease-out 0.05s both;
+}
+
+.active-service-info-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.active-service-info-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.active-service-info-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A1A;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.active-service-info-desc {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.active-service-info-details {
+    display: flex;
+    align-items: center;
+    background: #F9FAFB;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.active-service-info-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.active-service-info-detail-label {
+    font-size: 11px;
+    color: #9CA3AF;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.active-service-info-detail-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #3B6B1A;
+}
+
+.active-service-info-detail-value-sm {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    text-align: center;
+}
+
+.active-service-info-detail-divider {
+    width: 1px;
+    height: 36px;
+    background: #E5E7EB;
+    margin: 0 12px;
+}
+
+/* ── Contact Card ── */
+.active-service-contact {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    animation: fade-in 0.4s ease-out 0.1s both;
+}
+
+.active-service-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.active-service-contact-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3B6B1A, #4A7C23);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.active-service-contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.active-service-contact-role {
+    font-size: 11px;
+    color: #9CA3AF;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.active-service-contact-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+.active-service-contact-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.active-service-btn-chat {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #4A7C23;
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.active-service-btn-chat:hover {
+    background: #DCFCE7;
+}
+
+.active-service-btn-call {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.active-service-btn-call:hover {
+    background: #E5E7EB;
+}
+
+/* ── Timestamps ── */
+.active-service-timestamps {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: fade-in 0.4s ease-out 0.15s both;
+}
+
+.active-service-timestamp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.active-service-timestamp span:last-child {
+    font-weight: 600;
+    color: #374151;
+}
+
+/* ── Action Buttons ── */
+.active-service-action-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #3B6B1A 0%, #4A7C23 50%, #5A9129 100%);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 16px rgba(74, 124, 35, 0.3);
+    margin-top: 8px;
+    animation: fade-in 0.4s ease-out 0.2s both;
+}
+
+.active-service-action-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(74, 124, 35, 0.35);
+    background-position: right center;
+}
+
+.active-service-action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.active-service-confirm-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #059669, #10B981);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
+    margin-top: 8px;
+    animation: fade-in 0.4s ease-out 0.2s both;
+}
+
+.active-service-confirm-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.35);
+}
+
+.active-service-confirm-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.active-service-cancel-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #EF4444;
+    background: #FFFFFF;
+    border: 1.5px solid #FECACA;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 12px;
+}
+
+.active-service-cancel-btn:hover:not(:disabled) {
+    background: #FEF2F2;
+    border-color: #EF4444;
+}
+
+.active-service-cancel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Cancelled State ── */
+.active-service-cancelled {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #FECACA;
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.active-service-cancelled-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.active-service-cancelled h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #DC2626;
+    margin: 0 0 8px;
+}
+
+.active-service-cancelled p {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+}
+
+/* ── Loading & Error ── */
+.active-service-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+    color: #6B7280;
+    gap: 16px;
+}
+
+.active-service-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #E5E7EB;
+    border-top-color: #4A7C23;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.active-service-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+    gap: 16px;
+}
+
+.active-service-error p {
+    color: #DC2626;
+}
+
+.active-service-error button {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #4A7C23;
+    background: none;
+    border: 1.5px solid #4A7C23;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .active-service {
+        padding: 20px 16px 48px;
+    }
+
+    .active-service-stepper {
+        padding: 16px 12px;
+        overflow-x: auto;
+    }
+
+    .active-service-step-label {
+        font-size: 10px;
+    }
+
+    .active-service-step-circle {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+    }
+
+    .active-service-info-details {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .active-service-info-detail-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
+
+    .active-service-contact-row {
+        flex-wrap: wrap;
+    }
+
+    .active-service-contact-actions {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .active-service-btn-chat {
+        flex: 1;
+        text-align: center;
+    }
+}

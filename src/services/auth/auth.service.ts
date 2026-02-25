@@ -1,11 +1,11 @@
-import { api } from "../../config/api";
+import { api } from "@/config/api";
 import type {
   AuthResponse,
   LoginDto,
   RegisterClientDto,
   RegisterProfessionalDto,
   User,
-} from "../../types/auth.types";
+} from "@/types/auth.types";
 
 export const authService = {
   login: (data: LoginDto) =>

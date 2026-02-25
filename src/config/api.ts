@@ -27,8 +27,8 @@ api.interceptors.response.use(
     if (error.response?.status === 403) {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      if (window.location.pathname !== "/auth") {
-        window.location.href = "/auth";
+      if (window.location.pathname !== "/") {
+        window.location.href = "/";
       }
     }
 

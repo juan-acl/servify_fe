@@ -1,0 +1,337 @@
+/* ══════════════════════════════════════
+   REQUEST DETAIL PAGE
+   ══════════════════════════════════════ */
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.request-detail {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+    min-height: 100vh;
+    background: #FAFAF7;
+}
+
+/* ── Header ── */
+.request-detail-header {
+    margin-bottom: 24px;
+}
+
+.request-detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    color: #4A7C23;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.request-detail-back:hover {
+    color: #3B6B1A;
+}
+
+/* ── Request Info Card ── */
+.request-detail-info {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 28px;
+    animation: fade-in 0.4s ease-out;
+}
+
+.request-detail-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.request-detail-category {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4A7C23;
+    margin-bottom: 4px;
+}
+
+.request-detail-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.request-detail-status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #F3F4F6;
+    color: #6B7280;
+    white-space: nowrap;
+}
+
+.request-detail-description {
+    font-size: 15px;
+    color: #4B5563;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+/* Meta */
+.request-detail-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.request-detail-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.request-detail-meta-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+/* Expiration */
+.request-detail-expiration {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #92400E;
+}
+
+/* ── Offers Section ── */
+.request-detail-offers-section {
+    animation: fade-in 0.4s ease-out 0.1s both;
+}
+
+.request-detail-offers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.request-detail-offers-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.request-detail-offers-count {
+    background: #4A7C23;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Waiting Indicator */
+.request-detail-waiting {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #4A7C23;
+    font-weight: 500;
+}
+
+.request-detail-waiting-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4A7C23;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+/* Offers List */
+.request-detail-offers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* No Offers */
+.request-detail-no-offers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 20px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1.5px dashed #E5E7EB;
+    border-radius: 16px;
+}
+
+.request-detail-no-offers-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.request-detail-no-offers h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin: 0 0 6px;
+}
+
+.request-detail-no-offers p {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+    max-width: 300px;
+    line-height: 1.5;
+}
+
+/* ── Cancel Button ── */
+.request-detail-cancel {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #EF4444;
+    background: #FFFFFF;
+    border: 1.5px solid #FECACA;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 32px;
+}
+
+.request-detail-cancel:hover:not(:disabled) {
+    background: #FEF2F2;
+    border-color: #EF4444;
+}
+
+.request-detail-cancel:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Loading & Error ── */
+.request-detail-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    color: #6B7280;
+    gap: 16px;
+}
+
+.request-detail-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #E5E7EB;
+    border-top-color: #4A7C23;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.request-detail-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+    gap: 16px;
+}
+
+.request-detail-error p {
+    font-size: 15px;
+    color: #DC2626;
+}
+
+.request-detail-error button {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #4A7C23;
+    background: none;
+    border: 1.5px solid #4A7C23;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.request-detail-error button:hover {
+    background: #F0FDF4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .request-detail {
+        padding: 20px 16px 48px;
+    }
+
+    .request-detail-info-top {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .request-detail-offers-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

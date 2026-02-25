@@ -1,7 +1,7 @@
+import Input from "@/components/input";
+import type { LoginDto } from "@/types/auth.types";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import type { LoginDto } from "../../../types/auth.types";
-import Input from "../../input";
 
 interface LoginFormProps {
   onSubmit: (data: LoginDto) => void;

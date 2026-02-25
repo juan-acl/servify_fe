@@ -1,5 +1,5 @@
+import type { AuthMode } from "@/types/auth.types";
 import type React from "react";
-import type { AuthMode } from "../../types/auth.types";
 
 type Props = {
   mode: AuthMode;

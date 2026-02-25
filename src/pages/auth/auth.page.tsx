@@ -1,23 +1,23 @@
-import "../../styles/auth.page.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { OptionsRegister } from "../../components/auth/optionsRegister";
-import { LoginForm } from "../../components/auth/forms/login";
-import { RegisterClientForm } from "../../components/auth/forms/registerClient";
-import { RegisterProfessionalForm } from "../../components/auth/forms/registerProfessional";
-import { AuthFooter } from "../../components/auth/footer";
-import { Branding } from "../../components/auth/branding";
+import { Branding } from "@/components/auth/branding";
+import { AuthFooter } from "@/components/auth/footer";
+import { LoginForm } from "@/components/auth/forms/login";
+import { RegisterClientForm } from "@/components/auth/forms/registerClient";
+import { RegisterProfessionalForm } from "@/components/auth/forms/registerProfessional";
+import { OptionsRegister } from "@/components/auth/optionsRegister";
 import {
   useLogin,
   useRegisterClient,
   useRegisterProfessional,
-} from "../../hooks/useAuth";
+} from "@/hooks/useAuth";
+import "@/styles/auth.page.css";
 import type {
   AuthMode,
   LoginDto,
   RegisterClientDto,
   RegisterProfessionalDto,
-} from "../../types/auth.types";
+} from "@/types/auth.types";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const mapLabel = {
   login: "Ingresá tus credenciales para acceder a tu cuenta",

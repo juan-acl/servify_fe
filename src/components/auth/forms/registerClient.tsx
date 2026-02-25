@@ -1,7 +1,7 @@
+import Input from "@/components/input";
+import type { RegisterClientDto } from "@/types/auth.types";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import type { RegisterClientDto } from "../../../types/auth.types";
-import Input from "../../input";
 
 interface RegisterClientFormProps {
   onSubmit: (data: RegisterClientDto) => void;

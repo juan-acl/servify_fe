@@ -1,0 +1,150 @@
+/* ── Request Card ── */
+.request-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.request-card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+.request-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.request-card-category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+.request-card-category-icon {
+    font-size: 18px;
+}
+
+/* Urgency Badges */
+.request-card-urgency {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.urgency-emergency {
+    background: #FEF2F2;
+    color: #DC2626;
+}
+
+.urgency-today {
+    background: #FFFBEB;
+    color: #D97706;
+}
+
+.urgency-scheduled {
+    background: #EFF6FF;
+    color: #2563EB;
+}
+
+/* Description */
+.request-card-description {
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Address */
+.request-card-address {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #6B7280;
+    margin-bottom: 16px;
+}
+
+/* Footer */
+.request-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid #F3F4F6;
+}
+
+/* Status Badges */
+.request-card-status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.status-pending {
+    background: #F3F4F6;
+    color: #6B7280;
+}
+
+.status-active {
+    background: #ECFDF5;
+    color: #059669;
+}
+
+.status-accepted {
+    background: #F0FDF4;
+    color: #16A34A;
+}
+
+.status-transit {
+    background: #EFF6FF;
+    color: #2563EB;
+}
+
+.status-progress {
+    background: #FFFBEB;
+    color: #D97706;
+}
+
+.status-completed {
+    background: #F0FDF4;
+    color: #16A34A;
+}
+
+.status-cancelled {
+    background: #FEF2F2;
+    color: #DC2626;
+}
+
+/* Meta */
+.request-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.request-card-offers {
+    font-size: 12px;
+    color: #4A7C23;
+    font-weight: 600;
+}
+
+.request-card-time {
+    font-size: 12px;
+    color: #9CA3AF;
+}

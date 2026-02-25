@@ -1,12 +1,12 @@
 import { useState, type ReactNode } from "react";
-import type { User } from "../../types/auth.types";
 import { AuthContext } from ".";
+import type { User } from "@/types/auth.types";
 
 type Props = {
   children: ReactNode;
 };
 
-export function AuthProvider({ children }: Props) {
+export function AuthProvider({ children }: Readonly<Props>) {
   const [user, setUser] = useState<User | null>(() => {
     const stored = localStorage.getItem("user");
     return stored ? JSON.parse(stored) : null;
@@ -28,6 +28,7 @@ export function AuthProvider({ children }: Props) {
     setToken(null);
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+    window.location.href = "/";
   };
 
   const updateUser = (updatedUser: User) => {

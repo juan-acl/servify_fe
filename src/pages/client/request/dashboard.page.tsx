@@ -1,3 +1,4 @@
+import { NotificationBell } from "@/components/notification/notificationBell";
 import { RequestCard } from "@/components/request/requestCard";
 import { useAuth } from "@/context/auth";
 import { useMyRequests } from "@/hooks/useRequest";
@@ -25,12 +26,7 @@ export default function Dashboard() {
           <p className="dashboard-subtitle">¿Qué servicio necesitás hoy?</p>
         </div>
         <div className="dashboard-header-actions">
-          <button
-            className="dashboard-btn-notifications"
-            onClick={() => navigate("/notifications")}
-          >
-            🔔
-          </button>
+          <NotificationBell />
           <button
             className="dashboard-btn-profile"
             onClick={() => navigate("/profile")}

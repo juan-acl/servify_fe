@@ -4,6 +4,7 @@ import { URGENCY_RULES } from "@/utils/constants";
 import { minutesLeft, timeAgo } from "@/utils/time";
 import { useAuth } from "@/context/auth";
 import { useAvailableRequests } from "@/hooks/useAvailableRequests";
+import { NotificationBell } from "@/components/notification/notificationBell";
 
 export default function ProfessionalDashboard() {
   const navigate = useNavigate();
@@ -20,12 +21,7 @@ export default function ProfessionalDashboard() {
           </p>
         </div>
         <div className="pro-dashboard-header-actions">
-          <button
-            className="pro-dashboard-btn-notifications"
-            onClick={() => navigate("/notifications")}
-          >
-            🔔
-          </button>
+          <NotificationBell />
           <button
             className="pro-dashboard-btn-profile"
             onClick={() => navigate("/profile")}

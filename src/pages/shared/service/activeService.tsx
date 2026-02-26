@@ -124,14 +124,7 @@ export default function ActiveService() {
   return (
     <div className="active-service">
       <header className="active-service-header">
-        <button
-          className="active-service-back"
-          onClick={() =>
-            navigate(
-              isProfessional ? "/professional/dashboard" : "/client/dashboard",
-            )
-          }
-        >
+        <button className="active-service-back" onClick={() => navigate(-1)}>
           ← Volver
         </button>
         <h1 className="active-service-title">Servicio en Curso</h1>
@@ -236,7 +229,7 @@ export default function ActiveService() {
           <div className="active-service-contact-actions">
             {execution.request.conversation && (
               <button
-                disabled={execution.request.status === "COMPLETED"}
+                // disabled={execution.request.status === "COMPLETED"}
                 className="active-service-btn-chat"
                 onClick={() =>
                   navigate(`/chat/${execution.request.conversation!.id}`)
@@ -245,12 +238,6 @@ export default function ActiveService() {
                 💬 Chat
               </button>
             )}
-            <a
-              className="active-service-btn-call"
-              href={`tel:${isProfessional ? execution.request.client?.phone : execution.professional?.phone}`}
-            >
-              📞
-            </a>
           </div>
         </div>
       </div>

@@ -98,6 +98,7 @@ export default function RequestDetail() {
           <div>
             <div className="request-detail-category">
               <img
+                alt="Categoría"
                 src={request.category?.icon}
                 style={{
                   objectFit: "cover",
@@ -181,6 +182,7 @@ export default function RequestDetail() {
                 isAccepting={acceptMutation.isPending}
                 isNew={isNewOffer(offer.id)}
                 disabled={request.status === "ACCEPTED"}
+                executionId={request.execution?.id}
               />
             ))}
           </div>

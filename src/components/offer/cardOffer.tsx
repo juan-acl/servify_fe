@@ -1,22 +1,7 @@
+import { useAuth } from "@/context/auth";
 import "@/styles/offertCard.css";
-
-type OfferCardOffer = {
-  id: string;
-  price: number;
-  estimatedArrivalMinutes: number;
-  comment: string | null;
-  status: string;
-  professional: {
-    id: string;
-    firstName: string;
-    lastName: string;
-    avatarUrl?: string | null;
-    professionalProfile?: {
-      bio: string | null;
-      level: string;
-    };
-  };
-};
+import type { OfferCardOffer } from "@/types/offer.type";
+import { useNavigate } from "react-router-dom";
 
 interface OfferCardProps {
   offer: OfferCardOffer;
@@ -25,6 +10,7 @@ interface OfferCardProps {
   isAccepting: boolean;
   isNew?: boolean;
   disabled?: boolean;
+  executionId: string | undefined;
 }
 
 export function OfferCard({
@@ -34,8 +20,11 @@ export function OfferCard({
   isAccepting,
   isNew = false,
   disabled = false,
+  executionId,
 }: Readonly<OfferCardProps>) {
+  const { user } = useAuth();
   const professional = offer.professional;
+  const navigate = useNavigate();
   const initials =
     (professional.firstName?.charAt(0) || "") +
     (professional.lastName?.charAt(0) || "");
@@ -50,21 +39,45 @@ export function OfferCard({
 
   const levelInfo = LEVEL_CONFIG[level] || LEVEL_CONFIG.BRONZE;
 
+  const getDetailsExecution = (id: string) => {
+    const role = user?.role;
+    if (role === "CLIENT") {
+      navigate(`/client/service/${id}`);
+      return;
+    }
+    navigate(`/professional/service/${id}`);
+  };
+
   return (
     <div className={`offer-card ${isNew ? "offer-card-new" : ""}`}>
       {isNew && <div className="offer-card-new-badge">✨ Nueva oferta</div>}
 
       {/* Professional Info */}
-      <div className="offer-card-header">
-        <div className="offer-card-avatar">{initials}</div>
-        <div className="offer-card-info">
-          <span className="offer-card-name">
-            {professional.firstName} {professional.lastName}
-          </span>
-          <span className={`offer-card-level ${levelInfo.class}`}>
-            {levelInfo.label}
-          </span>
+      <div
+        className="offer-card-header"
+        style={{ justifyContent: "space-between", alignItems: "center" }}
+      >
+        <div className="offer-card-header">
+          <div className="offer-card-avatar">{initials}</div>
+          <div className="offer-card-info">
+            <span className="offer-card-name">
+              {professional.firstName} {professional.lastName}
+            </span>
+            <span className={`offer-card-level ${levelInfo.class}`}>
+              {levelInfo.label}
+            </span>
+          </div>
         </div>
+        {executionId && (
+          <div style={{ marginTop: "-12px" }}>
+            <button
+              onClick={() => getDetailsExecution(executionId)}
+              className="offer-card-btn-accept"
+            >
+              ver status
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Bio */}

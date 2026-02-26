@@ -19,6 +19,24 @@ export interface Offer {
   };
 }
 
+export type OfferCardOffer = {
+  id: string;
+  price: number;
+  estimatedArrivalMinutes: number;
+  comment: string | null;
+  status: string;
+  professional: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    avatarUrl?: string | null;
+    professionalProfile?: {
+      bio: string | null;
+      level: string;
+    };
+  };
+};
+
 export interface CreateOfferDto {
   requestId: string;
   price: number;

@@ -1,3 +1,5 @@
+import type { NotificationType } from "@/types/notification.types";
+
 const URGENCY_OPTIONS = [
   {
     value: "EMERGENCY",
@@ -85,6 +87,21 @@ function getStepIndex(status: string, arrivedAt: string | null): number {
   return 0;
 }
 
+const ICON_MAP: Record<NotificationType, string> = {
+  OFFER_RECEIVED: "💰",
+  OFFER_ACCEPTED: "✅",
+  OFFER_REJECTED: "❌",
+  SERVICE_IN_TRANSIT: "🚗",
+  SERVICE_ARRIVED: "📍",
+  SERVICE_STARTED: "🔧",
+  SERVICE_COMPLETED: "✅",
+  SERVICE_CANCELLED: "🚫",
+  NEW_MESSAGE: "💬",
+  NEW_REQUEST_NEARBY: "📋",
+  REQUEST_EXPIRED: "⏰",
+  REVIEW_RECEIVED: "⭐",
+};
+
 export {
   URGENCY_OPTIONS,
   URGENCY_CONFIG,
@@ -95,4 +112,5 @@ export {
   URGENCY_RULES,
   STEPS,
   getStepIndex,
+  ICON_MAP,
 };

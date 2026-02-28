@@ -8,7 +8,6 @@ import {
   useNotifications,
 } from "@/hooks/useNotification";
 import { NotificationBell } from "@/components/notification/notificationBell";
-import { ICON_MAP } from "@/utils/constants";
 import { timeAgo } from "@/utils/time";
 import { getNavigationPath } from "@/utils/path";
 
@@ -64,9 +63,7 @@ export default function Notifications() {
             className={`notification-item ${notification.isRead ? "" : "unread"}`}
             onClick={() => handleClick(notification)}
           >
-            <div className="notification-icon">
-              {ICON_MAP[notification.type] || "📢"}
-            </div>
+            <div className="notification-icon"></div>
             <div className="notification-content">
               <span className="notification-item-title">
                 {notification.title}

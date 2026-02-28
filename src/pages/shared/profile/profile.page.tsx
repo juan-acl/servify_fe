@@ -102,7 +102,7 @@ export default function Profile() {
           {profile?.firstName} {profile?.lastName}
         </h2>
         <span className="profile-role">
-          {isProfessional ? "🔧 Profesional" : "🏠 Cliente"}
+          {isProfessional ? "Profesional" : "Cliente"}
         </span>
         {isProfessional && profile?.professionalProfile && (
           <div className="profile-badges">
@@ -111,7 +111,7 @@ export default function Profile() {
             >
               {profile.professionalProfile.isVerifiedByAdmin
                 ? "✓ Verificado"
-                : "⏳ Pendiente verificación"}
+                : " Pendiente verificación"}
             </span>
             <span className="profile-badge level">
               {profile.professionalProfile.level}
@@ -258,7 +258,7 @@ export default function Profile() {
               <div className="profile-info-item">
                 <span className="profile-info-label">Disponible</span>
                 <span className="profile-info-value">
-                  {profile.professionalProfile.isAvailable ? "✅ Sí" : "❌ No"}
+                  {profile.professionalProfile.isAvailable ? "Sí" : "No"}
                 </span>
               </div>
               <div className="profile-info-item">

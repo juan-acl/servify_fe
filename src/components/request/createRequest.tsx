@@ -54,11 +54,7 @@ export default function CreateRequest() {
       </header>
 
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        {error && (
-          <div className="create-request-error">
-            <span>⚠️</span> {error}
-          </div>
-        )}
+        {error && <div className="create-request-error">{error}</div>}
 
         <section className="create-request-section">
           <h2 className="create-request-section-title">
@@ -219,10 +215,6 @@ export default function CreateRequest() {
               })}
             />
           </div>
-
-          <p className="create-request-coords-hint">
-            En la versión final esto se llenará automáticamente con un mapa
-          </p>
         </section>
 
         <button

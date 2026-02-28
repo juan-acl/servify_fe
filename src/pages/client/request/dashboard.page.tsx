@@ -22,7 +22,7 @@ export default function Dashboard() {
     <div className="dashboard">
       <header className="dashboard-header">
         <div>
-          <h1 className="dashboard-title">Hola, {user?.firstName} 👋</h1>
+          <h1 className="dashboard-title">Hola, {user?.firstName}</h1>
           <p className="dashboard-subtitle">¿Qué servicio necesitás hoy?</p>
         </div>
         <div className="dashboard-header-actions">
@@ -76,13 +76,12 @@ export default function Dashboard() {
 
         {error && (
           <div className="dashboard-error">
-            <p>⚠️ {error.message}</p>
+            <p>{error.message}</p>
           </div>
         )}
 
         {!isLoading && !error && requests?.length === 0 && (
           <div className="dashboard-empty">
-            <span className="dashboard-empty-icon">📋</span>
             <h3>No tenés solicitudes</h3>
             <p>
               {activeTab

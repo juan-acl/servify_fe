@@ -5,11 +5,6 @@ const getPathByRole = (
   keyword: "service" | "request",
   id: string,
 ) => {
-  console.log("vakidando datos", {
-    role,
-    keyword,
-    id,
-  });
   if (role === "CLIENT") {
     return `/${keyword === "service" ? "client/service" : "client/request"}/${id}`;
   } else {
@@ -35,8 +30,9 @@ function getNavigationPath(
         ? getPathByRole(role, "request", data.requestId)
         : null;
 
-    case "OFFER_ACCEPTED":
     case "OFFER_REJECTED":
+      return null;
+    case "OFFER_ACCEPTED":
     case "NEW_REQUEST_NEARBY":
       return data.requestId ? getPathByRole(role, requestPath, id) : null;
 

@@ -8,7 +8,6 @@ export const Branding = () => {
       <div className="auth-right-overlay" />
 
       <div className="auth-right-content">
-        <div className="auth-brand-icon">🔧</div>
         <h2 className="auth-brand-title">Servify</h2>
         <p className="auth-brand-subtitle">
           Conectamos a los mejores profesionales con quienes los necesitan.

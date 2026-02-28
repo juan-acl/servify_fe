@@ -31,10 +31,10 @@ export function OfferCard({
   const level = professional.professionalProfile?.level || "BRONZE";
 
   const LEVEL_CONFIG: Record<string, { label: string; class: string }> = {
-    BRONZE: { label: "🥉 Bronce", class: "level-bronze" },
-    SILVER: { label: "🥈 Plata", class: "level-silver" },
-    GOLD: { label: "🥇 Oro", class: "level-gold" },
-    PLATINUM: { label: "💎 Platino", class: "level-platinum" },
+    BRONZE: { label: "Bronce", class: "level-bronze" },
+    SILVER: { label: "Plata", class: "level-silver" },
+    GOLD: { label: "Oro", class: "level-gold" },
+    PLATINUM: { label: "Platino", class: "level-platinum" },
   };
 
   const levelInfo = LEVEL_CONFIG[level] || LEVEL_CONFIG.BRONZE;
@@ -50,7 +50,7 @@ export function OfferCard({
 
   return (
     <div className={`offer-card ${isNew ? "offer-card-new" : ""}`}>
-      {isNew && <div className="offer-card-new-badge">✨ Nueva oferta</div>}
+      {isNew && <div className="offer-card-new-badge">Nueva oferta</div>}
 
       {/* Professional Info */}
       <div
@@ -88,7 +88,6 @@ export function OfferCard({
       {/* Comment */}
       {offer.comment && (
         <div className="offer-card-comment">
-          <span className="offer-card-comment-icon">💬</span>
           <p>{offer.comment}</p>
         </div>
       )}

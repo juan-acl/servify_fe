@@ -26,11 +26,7 @@ export function RegisterProfessionalForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      {error && (
-        <div className="auth-error">
-          <span>⚠️</span> {error}
-        </div>
-      )}
+      {error && <div className="auth-error">{error}</div>}
 
       <div className="auth-row">
         <Input

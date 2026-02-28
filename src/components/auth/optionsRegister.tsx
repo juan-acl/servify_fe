@@ -15,13 +15,13 @@ export const OptionsRegister = ({ mode, switchMode, isRegister }: Props) => {
             className={`auth-role-btn ${mode === "register-client" ? "active" : ""}`}
             onClick={() => switchMode("register-client")}
           >
-            🏠 Cliente
+            Cliente
           </button>
           <button
             className={`auth-role-btn ${mode === "register-professional" ? "active" : ""}`}
             onClick={() => switchMode("register-professional")}
           >
-            🔧 Profesional
+            Profesional
           </button>
         </div>
       )}

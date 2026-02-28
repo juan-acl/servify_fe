@@ -24,11 +24,7 @@ export function LoginForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      {error && (
-        <div className="auth-error">
-          <span>⚠️</span> {error}
-        </div>
-      )}
+      {error && <div className="auth-error">{error}</div>}
 
       <Input
         label="Email"

@@ -73,7 +73,7 @@ export default function RequestDetail() {
     return (
       <div className="request-detail">
         <div className="request-detail-error">
-          <p>⚠️ {error?.message || "Solicitud no encontrada"}</p>
+          <p>{error?.message || "Solicitud no encontrada"}</p>
           <button onClick={() => navigate("/client/dashboard")}>
             Volver al inicio
           </button>
@@ -119,22 +119,19 @@ export default function RequestDetail() {
 
         <div className="request-detail-meta">
           <div className="request-detail-meta-item">
-            <span className="request-detail-meta-icon">📍</span>
             <span>{request.address}</span>
           </div>
           <div className="request-detail-meta-item">
-            <span className="request-detail-meta-icon">⏰</span>
             <span>{URGENCY_LABELS[request.urgency]}</span>
           </div>
           <div className="request-detail-meta-item">
-            <span className="request-detail-meta-icon">📅</span>
             <span>{new Date(request.createdAt).toLocaleString("es-GT")}</span>
           </div>
         </div>
 
         {(request.status === "PENDING" || request.status === "ACTIVE") && (
           <div className="request-detail-expiration">
-            ⏳ Expira:{" "}
+            Expira:{" "}
             {new Date(request.expiresAt).toLocaleTimeString("es-GT", {
               hour: "2-digit",
               minute: "2-digit",
@@ -164,7 +161,6 @@ export default function RequestDetail() {
 
         {allOffers.length === 0 ? (
           <div className="request-detail-no-offers">
-            <span className="request-detail-no-offers-icon">📨</span>
             <h3>Aún no hay ofertas</h3>
             <p>
               Los profesionales están revisando tu solicitud. Las ofertas

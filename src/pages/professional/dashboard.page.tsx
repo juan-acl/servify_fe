@@ -15,7 +15,6 @@ export default function ProfessionalDashboard() {
     <div className="pro-dashboard">
       <header className="pro-dashboard-header">
         <div>
-          <h1 className="pro-dashboard-title">Hola, {user?.firstName} 🔧</h1>
           <p className="pro-dashboard-subtitle">
             Solicitudes disponibles en tu zona
           </p>
@@ -69,7 +68,6 @@ export default function ProfessionalDashboard() {
 
         {!isLoading && !error && requests?.length === 0 && (
           <div className="pro-dashboard-empty">
-            <span className="pro-dashboard-empty-icon">🔍</span>
             <h3>No hay solicitudes disponibles</h3>
             <p>
               Las nuevas solicitudes aparecerán aquí automáticamente. Se
@@ -117,7 +115,7 @@ export default function ProfessionalDashboard() {
                   </p>
 
                   <div className="pro-request-card-address">
-                    📍 {request.address}
+                    {request.address}
                   </div>
 
                   <div className="pro-request-card-footer">
@@ -125,7 +123,7 @@ export default function ProfessionalDashboard() {
                       {timeAgo(request.createdAt)}
                     </span>
                     <span className="pro-request-card-expires">
-                      ⏳ {minutesLeft(request.expiresAt)}
+                      {minutesLeft(request.expiresAt)}
                     </span>
                   </div>
                 </div>

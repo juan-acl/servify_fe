@@ -14,6 +14,9 @@ export const useMessages = (conversationId: string) => {
     queryKey: ["messages", conversationId],
     queryFn: () => chatService.getMessages(conversationId, 50),
     enabled: !!conversationId,
+    staleTime: 0,
+    gcTime: 0,
+    refetchOnMount: "always",
   });
 };
 

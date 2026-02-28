@@ -15,13 +15,13 @@ const URGENCY_OPTIONS = [
     description: "Lo necesito en las próximas horas",
     time: "Expira en 2 horas",
   },
-  {
-    value: "SCHEDULED",
-    icon: "🔵",
-    label: "Programado",
-    description: "Quiero agendarlo para otro día",
-    time: "Elegí fecha y hora",
-  },
+  // {
+  //   value: "SCHEDULED",
+  //   icon: "🔵",
+  //   label: "Programado",
+  //   description: "Quiero agendarlo para otro día",
+  //   time: "Elegí fecha y hora",
+  // },
 ];
 
 const URGENCY_CONFIG: Record<string, { label: string; class: string }> = {
@@ -43,7 +43,6 @@ const STATUS_CONFIG: Record<string, { label: string; class: string }> = {
 const URGENCY_LABELS: Record<string, string> = {
   EMERGENCY: "🔴 Emergencia",
   TODAY: "🟡 Hoy",
-  SCHEDULED: "🔵 Programado",
 };
 
 const STATUS_LABELS: Record<string, string> = {
@@ -88,18 +87,18 @@ function getStepIndex(status: string, arrivedAt: string | null): number {
 }
 
 const ICON_MAP: Record<NotificationType, string> = {
-  OFFER_RECEIVED: "💰",
-  OFFER_ACCEPTED: "✅",
-  OFFER_REJECTED: "❌",
-  SERVICE_IN_TRANSIT: "🚗",
-  SERVICE_ARRIVED: "📍",
-  SERVICE_STARTED: "🔧",
-  SERVICE_COMPLETED: "✅",
-  SERVICE_CANCELLED: "🚫",
-  NEW_MESSAGE: "💬",
-  NEW_REQUEST_NEARBY: "📋",
-  REQUEST_EXPIRED: "⏰",
-  REVIEW_RECEIVED: "⭐",
+  OFFER_RECEIVED: "",
+  OFFER_ACCEPTED: "",
+  OFFER_REJECTED: "",
+  SERVICE_IN_TRANSIT: "",
+  SERVICE_ARRIVED: "",
+  SERVICE_STARTED: "",
+  SERVICE_COMPLETED: "",
+  SERVICE_CANCELLED: "",
+  NEW_MESSAGE: "",
+  NEW_REQUEST_NEARBY: "",
+  REQUEST_EXPIRED: "",
+  REVIEW_RECEIVED: "",
 };
 
 export {

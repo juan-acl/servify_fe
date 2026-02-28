@@ -31,7 +31,6 @@ export function RequestCard({ request, onClick }: Readonly<RequestCardProps>) {
       <p className="request-card-description">{request.description}</p>
 
       <div className="request-card-address">
-        <span>📍</span>
         <span>{request.address}</span>
       </div>
 

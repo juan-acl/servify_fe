@@ -40,7 +40,6 @@ export interface Execution {
   };
 }
 
-// Estados posibles del servicio
 export type ExecutionStatus =
   | "ACCEPTED"
   | "IN_TRANSIT"

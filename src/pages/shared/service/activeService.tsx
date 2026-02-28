@@ -24,6 +24,7 @@ export default function ActiveService() {
   const startWork = useStartWork();
   const completeWork = useCompleteWork();
   const confirmCompletion = useConfirmCompletion();
+  console.log("validando el estado", confirmCompletion);
   const cancelExecution = useCancelExecution();
 
   const isProfessional = user?.role === "PROFESSIONAL";
@@ -61,28 +62,28 @@ export default function ActiveService() {
 
     if (status === "ACCEPTED") {
       return {
-        label: "🚗 Estoy en camino",
+        label: "Estoy en camino",
         mutation: markInTransit,
         action: () => markInTransit.mutate(id!),
       };
     }
     if (status === "IN_TRANSIT" && !execution.arrivedAt) {
       return {
-        label: "📍 Ya llegué",
+        label: "Ya llegué",
         mutation: markArrived,
         action: () => markArrived.mutate(id!),
       };
     }
     if (status === "IN_TRANSIT" && execution.arrivedAt) {
       return {
-        label: "🔧 Iniciar trabajo",
+        label: "Iniciar trabajo",
         mutation: startWork,
         action: () => startWork.mutate(id!),
       };
     }
     if (status === "IN_PROGRESS") {
       return {
-        label: "✅ Trabajo completado",
+        label: "Trabajo completado",
         mutation: completeWork,
         action: () => completeWork.mutate(id!),
       };
@@ -235,7 +236,7 @@ export default function ActiveService() {
                   navigate(`/chat/${execution.request.conversation!.id}`)
                 }
               >
-                💬 Chat
+                Chat
               </button>
             )}
           </div>
@@ -259,7 +260,7 @@ export default function ActiveService() {
           )}
           {execution.startedAt && (
             <div className="active-service-timestamp">
-              <span>🔧 Inició:</span>
+              <span>Inició:</span>
               <span>
                 {new Date(execution.startedAt).toLocaleTimeString("es-GT", {
                   hour: "2-digit",
@@ -270,7 +271,7 @@ export default function ActiveService() {
           )}
           {execution.completedAt && (
             <div className="active-service-timestamp">
-              <span>✅ Completó:</span>
+              <span>Completó:</span>
               <span>
                 {new Date(execution.completedAt).toLocaleTimeString("es-GT", {
                   hour: "2-digit",
@@ -300,7 +301,7 @@ export default function ActiveService() {
         >
           {confirmCompletion.isPending
             ? "Confirmando..."
-            : "✅ Confirmar Servicio Completado"}
+            : "Confirmar Servicio Completado"}
         </button>
       )}
 

@@ -58,7 +58,7 @@ export default function ProfessionalRequestDetail() {
     return (
       <div className="pro-request-detail">
         <div className="pro-request-detail-error">
-          <p>⚠️ {error?.message || "Solicitud no encontrada"}</p>
+          <p>{error?.message || "Solicitud no encontrada"}</p>
           <button onClick={() => navigate("/professional/dashboard")}>
             Volver
           </button>
@@ -104,22 +104,18 @@ export default function ProfessionalRequestDetail() {
 
         <div className="pro-request-detail-meta">
           <div className="pro-request-detail-meta-item">
-            <span>📍</span>
             <span>{request.address}</span>
           </div>
           <div className="pro-request-detail-meta-item">
-            <span>👤</span>
             <span>
               {request.client?.firstName} {request.client?.lastName}
             </span>
           </div>
           <div className="pro-request-detail-meta-item">
-            <span>📅</span>
             <span>{new Date(request.createdAt).toLocaleString("es-GT")}</span>
           </div>
           {request.scheduledAt && (
             <div className="pro-request-detail-meta-item">
-              <span>🗓️</span>
               <span>
                 Programado:{" "}
                 {new Date(request.scheduledAt).toLocaleString("es-GT")}
@@ -142,9 +138,7 @@ export default function ProfessionalRequestDetail() {
         </p>
 
         {offerError && (
-          <div className="pro-request-detail-form-error">
-            <span>⚠️</span> {offerError}
-          </div>
+          <div className="pro-request-detail-form-error">{offerError}</div>
         )}
 
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -192,7 +186,7 @@ export default function ProfessionalRequestDetail() {
             className={`pro-request-detail-submit ${isSending ? "loading" : ""}`}
             disabled={isSending}
           >
-            {isSending ? "Enviando oferta..." : "🚀 Enviar Oferta"}
+            {isSending ? "Enviando oferta..." : "Enviar Oferta"}
           </button>
         </form>
       </div>
